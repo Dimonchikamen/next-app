@@ -1,0 +1,35 @@
+.container {
+    box-sizing: content-box;
+    border: 2px solid #828282;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+
+    &.checked,
+    &:hover {
+        border-color: #00ead9;
+    }
+
+    &.disabled {
+        border-color: #e0e0e0;
+    }
+}
+
+.radio {
+    background-color: #00ead9;
+    border: 0;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+
+    &:hover {
+        background-color: #00ead9;
+    }
+}
+
+.label {
+}
