@@ -13,13 +13,14 @@ const RadioButtonPresentation: FC<IRadioButtonPresentationProps> = ({ label, che
         if (!disabled) onClick(e);
     };
     return (
-        <div>
-            <div
-                className={`${s.container} ${checked ? s.checked : ""} ${disabled ? s.disabled : ""} `}
-                onClick={clickHandler}
-            >
+        <div
+            className={s.container}
+            onClick={clickHandler}
+        >
+            <div className={`${s.radio_container} ${checked ? s.checked : ""} ${disabled ? s.disabled : ""} `}>
                 {checked && <div className={s.radio} />}
             </div>
+            <label>{label}</label>
         </div>
     );
 };

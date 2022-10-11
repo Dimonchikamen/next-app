@@ -1,6 +1,19 @@
+@import "../../styles/variables.scss";
+
 .container {
+    display: grid;
+    grid-template-columns: 20px auto;
+    gap: 0.5em;
+
+    &:hover {
+        .radio_container:not(.disabled) {
+            border-color: $bg_turquoise_bright;
+        }
+    }
+}
+.radio_container {
     box-sizing: content-box;
-    border: 2px solid #828282;
+    border: 2px solid $border_color;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -10,26 +23,19 @@
 
     &.checked,
     &:hover {
-        border-color: #00ead9;
+        border-color: $bg_turquoise_bright;
     }
 
     &.disabled {
-        border-color: #e0e0e0;
+        border-color: $border_disabled_color;
     }
 }
 
 .radio {
-    background-color: #00ead9;
+    background-color: $bg_turquoise_bright;
     border: 0;
     border-radius: 50%;
     box-sizing: border-box;
     width: 10px;
     height: 10px;
-
-    &:hover {
-        background-color: #00ead9;
-    }
-}
-
-.label {
 }

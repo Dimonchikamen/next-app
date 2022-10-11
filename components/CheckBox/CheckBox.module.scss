@@ -1,0 +1,113 @@
+@import "../../styles/variables.scss";
+
+.container {
+    display: inline;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+
+    input[type="checkbox"] {
+        appearance: none;
+        background-color: #fff;
+        display: grid;
+        place-content: center;
+        margin: 0;
+        height: 18px;
+        width: 18px;
+        // background-color: #eee;
+        border: 2px solid $border_color;
+        border-radius: 2px;
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        transform: scale(0);
+        width: 14px;
+        height: 10px;
+        transform-origin: bottom left;
+        clip-path: path("M5 10L0 5.19231L1.4 3.84615L5 7.30769L12.6 0L14 1.34615L5 10Z");
+        background-color: white;
+    }
+
+    input[type="checkbox"]:hover {
+        border: 2px solid $bg_turquoise_bright;
+    }
+
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+    }
+
+    input[type="checkbox"]:checked {
+        border: 2px solid $bg_turquoise_bright;
+        background-color: $bg_turquoise_bright;
+    }
+
+    input[type="checkbox"]:disabled {
+        color: rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
+.form_control {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+.form_control__disabled {
+    color: #eee;
+    cursor: not-allowed;
+}
+
+.form_control {
+    input[type="checkbox"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        /* Remove most all native input styles */
+        appearance: none;
+        /* For iOS < 15 */
+        background-color: var(--form-background);
+        /* Not removed via appearance */
+        margin: 0;
+
+        font: inherit;
+        color: #eee;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid $border_color;
+        border-radius: 0.15em;
+        // transform: translateY(-0.075em);
+        display: grid;
+        place-content: center;
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        clip-path: path("M5 10L0 5.19231L1.4 3.84615L5 7.30769L12.6 0L14 1.34615L5 10Z");
+        background-color: white;
+        transition: 120ms transform ease-in-out;
+    }
+
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: $bg_turquoise_bright;
+        border: 2px solid $bg_turquoise_bright;
+    }
+
+    input[type="checkbox"]:hover {
+        border: 2px solid $bg_turquoise_bright;
+    }
+
+    input[type="checkbox"]:disabled {
+        border: 2px solid $border_disabled_color;
+    }
+
+    input[type="checkbox"]:disabled:checked {
+        border: 2px solid $bg_turquoise_bright;
+    }
+}

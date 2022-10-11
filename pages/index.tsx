@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { FC } from "react";
 import Button from "../components/Button/Button";
+import CheckBox from "../components/CheckBox/CheckBox";
 import RadioButton from "../components/RadioButton/RadioButton";
 import styles from "../styles/Home.module.css";
 
@@ -37,6 +38,15 @@ const Home: NextPage = () => {
                     <RadioButton
                         label="ww"
                         value="ww"
+                        disabled={true}
+                    />
+                    <CheckBox
+                        value="qwe"
+                        label="qwe?"
+                    />
+                    <CheckBox
+                        value="tre"
+                        label="tre?"
                         disabled={true}
                     />
                 </form>
