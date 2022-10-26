@@ -1,0 +1,25 @@
+.header {
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+}
+
+.test_information_container {
+    display: flex;
+    gap: 33px;
+}
+
+.test_title {
+    color: #828282;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo_container {
+    position: relative;
+    margin-left: calc(245px - 64px);
+    width: 64px;
+    height: 64px;
+}

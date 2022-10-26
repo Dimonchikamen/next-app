@@ -3,14 +3,13 @@ import s from "./QuestionTimer.module.scss";
 
 interface IQuestionTimeProps {
     time: string;
-    procentLeft: number;
+    percentLeft: number;
 }
 
-const QuestionTimer: FC<IQuestionTimeProps> = ({ time, procentLeft }) => {
+const QuestionTimer: FC<IQuestionTimeProps> = ({ time, percentLeft }) => {
     const pi = 3.14159265358979;
-    const Twopi = pi * 2;
-    const circumference = Twopi * 60;
-    const a = 0.75 * circumference;
+    const circumference = 2 * pi * 60;
+    const a = (percentLeft / 100) * circumference;
     return (
         <div className={s.container}>
             <span className={s.time}>01:45</span>

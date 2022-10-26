@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Button from "../components/Button/Button";
 import CheckBox from "../components/CheckBox/CheckBox";
+import Header from "../components/Header/Header";
 import InformationComponent from "../components/InformationComponent/InformationComponent";
+import NavSidebar from "../components/NavSidebar/NavSidebar";
 import QuestionTimer from "../components/QuestionTimer/QuestionTimer";
 import RadioButton from "../components/RadioButton/RadioButton";
 import styles from "../styles/Home.module.css";
@@ -25,48 +27,63 @@ const LinkBlock: FC<ILinkBlockProps> = ({ title, text, href }) => {
 };
 
 const Home: NextPage = () => {
+    const q = [];
+    for (let i = 0; i < 50; i++) q.push({ id: i, isAnswered: i % 2 === 0 });
+    const [active, setActive] = useState(0);
+
     return (
-        <div className={styles.container}>
-            <header></header>
-            <main className={styles.main}>
-                <QuestionTimer
-                    time="1:45"
-                    procentLeft={75}
+        <div className={styles.page}>
+            <NavSidebar
+                questions={q}
+                activeQuestion={active}
+                onSelectQuestion={setActive}
+            />
+            <div className={styles.container}>
+                <Header
+                    answers={3}
+                    questions={20}
+                    testTitle={"Русь и золотая орда"}
+                    testTimeLeft={"60:30"}
                 />
-                <InformationComponent
-                    imageURL="/question.svg"
-                    text="8/20"
-                />
-                <InformationComponent
-                    imageURL="/clock.svg"
-                    text="60:00"
-                />
-                <Button
-                    title="Создать игру"
-                    disabled={true}
-                />
-                <form>
-                    <RadioButton
-                        label="qwe"
-                        value="qwe"
+                <main className={styles.main}>
+                    <QuestionTimer
+                        time="1:45"
+                        percentLeft={75}
                     />
-                    <RadioButton
-                        label="ww"
-                        value="ww"
+                    <InformationComponent
+                        imageURL="/question.svg"
+                        text="8/20"
+                    />
+                    <InformationComponent
+                        imageURL="/clock.svg"
+                        text="60:00"
+                    />
+                    <Button
+                        title="Создать игру"
                         disabled={true}
                     />
-                    <CheckBox
-                        value="qwe"
-                        label="qwe?"
-                    />
-                    <CheckBox
-                        value="tre"
-                        label="tre?"
-                        disabled={true}
-                    />
-                </form>
-            </main>
-            <footer className={styles.footer}></footer>
+                    <form>
+                        <RadioButton
+                            label="qwe"
+                            value="qwe"
+                        />
+                        <RadioButton
+                            label="ww"
+                            value="ww"
+                            disabled={true}
+                        />
+                        <CheckBox
+                            value="qwe"
+                            label="qwe?"
+                        />
+                        <CheckBox
+                            value="tre"
+                            label="tre?"
+                            disabled={true}
+                        />
+                    </form>
+                </main>
+            </div>
         </div>
     );
 };

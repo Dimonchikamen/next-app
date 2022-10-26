@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import InformationComponent from "../InformationComponent/InformationComponent";
+import s from "./Header.module.scss";
 
 interface IHeaderProps {
     answers: number;
@@ -11,8 +12,8 @@ interface IHeaderProps {
 
 const Header: FC<IHeaderProps> = ({ answers, questions, testTimeLeft, testTitle }) => {
     return (
-        <header>
-            <div>
+        <header className={s.header}>
+            <div className={s.test_information_container}>
                 <InformationComponent
                     imageURL="/question.svg"
                     text={`${answers}/${questions}`}
@@ -22,9 +23,10 @@ const Header: FC<IHeaderProps> = ({ answers, questions, testTimeLeft, testTitle 
                     text={testTimeLeft}
                 />
             </div>
-            <span>{testTimeLeft}</span>
-            <div>
+            <span className={s.test_title}>{testTitle.toUpperCase()}</span>
+            <div className={s.logo_container}>
                 <Image
+                    layout="fill"
                     src="/Logo.svg"
                     alt="logo"
                 />
@@ -32,3 +34,5 @@ const Header: FC<IHeaderProps> = ({ answers, questions, testTimeLeft, testTitle 
         </header>
     );
 };
+
+export default Header;

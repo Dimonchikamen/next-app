@@ -1,0 +1,65 @@
+@import "../../styles//variables.scss";
+
+.nav_element {
+    border-bottom: 1px solid #e0e0e0;
+    color: #bdbdbd;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 0;
+    width: 34px;
+
+    &.answered {
+        color: $color_darkGreen;
+    }
+
+    &.active {
+        color: $bg_turquoise_bright;
+    }
+}
+
+.nav_sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    padding: 70px 33px 55px 33px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    height: calc(100vh);
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    &:hover {
+        overflow-y: scroll;
+        padding-right: (33px - 5px);
+    }
+
+    .icon_container:hover {
+        cursor: pointer;
+    }
+
+    .list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+        li:hover {
+            cursor: pointer;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px; /* ширина scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: white; /* цвет дорожки */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(172, 172, 172, 0.4); /* цвет плашки */
+        border-radius: 20px; /* закругления плашки */
+    }
+}
