@@ -6,6 +6,7 @@
     gap: 0.5em;
 
     &:hover {
+        cursor: pointer;
         .radio_container:not(.disabled) {
             border-color: $bg_turquoise_bright;
         }

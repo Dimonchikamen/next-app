@@ -1,6 +1,7 @@
 import { FC } from "react";
 import s from "./NavSidebar.module.scss";
 import Image from "next/image";
+import { QuestionView } from "../../types/Question";
 
 interface INavElementProps {
     number: number;
@@ -15,12 +16,12 @@ const NavElement: FC<INavElementProps> = ({ number, isAnswered, isActive }) => {
 };
 
 interface INavSidebarProps {
-    questions: any[];
-    activeQuestion: number;
+    questions: QuestionView[];
+    activeQuestionId: number;
     onSelectQuestion: (number: number) => void;
 }
 
-const NavSidebar: FC<INavSidebarProps> = ({ questions, activeQuestion, onSelectQuestion }) => {
+const NavSidebar: FC<INavSidebarProps> = ({ questions, activeQuestionId, onSelectQuestion }) => {
     return (
         <div className={s.nav_sidebar}>
             <div className={s.icon_container}>
@@ -40,7 +41,7 @@ const NavSidebar: FC<INavSidebarProps> = ({ questions, activeQuestion, onSelectQ
                         >
                             <NavElement
                                 number={i + 1}
-                                isActive={q.id === activeQuestion}
+                                isActive={q.id === activeQuestionId}
                                 isAnswered={q.isAnswered}
                             />
                         </li>

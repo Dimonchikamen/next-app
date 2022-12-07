@@ -1,0 +1,54 @@
+{
+    "id": 1,
+    "title": "Наша родная Родина Матушка Росссия",
+    "timeMinutes": 10,
+    "navigationType": "free",
+    "questions": [
+        {
+            "id": 1,
+            "title": "Сколько вам лет?",
+            "answerType": "single",
+            "answerVariants": [
+                {
+                    "id": 1,
+                    "title": 10
+                },
+                {
+                    "id": 2,
+                    "title": 20
+                },
+                {
+                    "id": 3,
+                    "title": 30
+                },
+                {
+                    "id": 4,
+                    "title": 40
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Сколько мне лет?",
+            "answerType": "single",
+            "answerVariants": [
+                {
+                    "id": 5,
+                    "title": 20
+                },
+                {
+                    "id": 6,
+                    "title": 40
+                },
+                {
+                    "id": 7,
+                    "title": 10
+                },
+                {
+                    "id": 8,
+                    "title": 30
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.form {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 60px;
+    width: 65%;
+}
+
+.question_timer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action_button_group {
+    display: flex;
+    justify-content: right;
+    gap: 48px;
+    width: 100%;
+
+    > .skip_button {
+        box-shadow: none;
+        background: none;
+
+        &:hover {
+            color: $bg_turquoise_bright;
+        }
+    }
+}

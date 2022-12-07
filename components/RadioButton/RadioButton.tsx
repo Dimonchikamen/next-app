@@ -2,19 +2,26 @@ import React, { FC, useEffect, useState } from "react";
 import s from "./RadioButton.module.scss";
 
 interface IRadioButtonPresentationProps {
+    className?: string;
     label: string;
     checked: boolean;
     disabled?: boolean;
     onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const RadioButtonPresentation: FC<IRadioButtonPresentationProps> = ({ label, checked, disabled = false, onClick }) => {
+const RadioButtonPresentation: FC<IRadioButtonPresentationProps> = ({
+    className,
+    label,
+    checked,
+    disabled = false,
+    onClick,
+}) => {
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!disabled) onClick(e);
     };
     return (
         <div
-            className={s.container}
+            className={`${s.container} ${className}`}
             onClick={clickHandler}
         >
             <div className={`${s.radio_container} ${checked ? s.checked : ""} ${disabled ? s.disabled : ""} `}>
@@ -26,6 +33,7 @@ const RadioButtonPresentation: FC<IRadioButtonPresentationProps> = ({ label, che
 };
 
 interface IRadioButtonProps {
+    className?: string;
     label: string;
     value: string;
     checked?: boolean;
@@ -33,7 +41,7 @@ interface IRadioButtonProps {
     onClick?: (e: React.MouseEvent<HTMLDivElement>, value: string) => void;
 }
 
-const RadioButton: FC<IRadioButtonProps> = ({ label, value, checked = false, disabled, onClick }) => {
+const RadioButton: FC<IRadioButtonProps> = ({ className, label, value, checked = false, disabled, onClick }) => {
     const [checkedState, setChecked] = useState(checked);
 
     useEffect(() => {
@@ -47,6 +55,7 @@ const RadioButton: FC<IRadioButtonProps> = ({ label, value, checked = false, dis
 
     return (
         <RadioButtonPresentation
+            className={className}
             label={label}
             disabled={disabled}
             checked={checkedState}

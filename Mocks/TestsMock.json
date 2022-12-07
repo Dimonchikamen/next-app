@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "title": "Наша родная Родина Матушка Росссия",
+        "timeMinutes": 10,
+        "navigationType": "free",
+        "questions": [
+            {
+                "id": 1,
+                "title": "Сколько вам лет?",
+                "answerType": "single",
+                "answerVariansts": [
+                    {
+                        "id": 1,
+                        "title": 10
+                    },
+                    {
+                        "id": 2,
+                        "title": 20
+                    },
+                    {
+                        "id": 3,
+                        "title": 30
+                    },
+                    {
+                        "id": 4,
+                        "title": 40
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Сколько мне лет?",
+                "answerType": "single",
+                "answerVariansts": [
+                    {
+                        "id": 5,
+                        "title": 20
+                    },
+                    {
+                        "id": 6,
+                        "title": 40
+                    },
+                    {
+                        "id": 7,
+                        "title": 10
+                    },
+                    {
+                        "id": 8,
+                        "title": 30
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Твоя моя - не твоя и не моя. Кто я?",
+        "timeMinutes": 5,
+        "navigationType": "consistently",
+        "questions": [
+            {
+                "id": 3,
+                "title": "Что за вопрос стоит в заголовке теста?",
+                "answerType": "single",
+                "timeMinutes": 1,
+                "answerVariansts": [
+                    {
+                        "id": 8,
+                        "title": "Безобразие какое-то"
+                    },
+                    {
+                        "id": 9,
+                        "title": "Кто я?"
+                    },
+                    {
+                        "id": 10,
+                        "title": "Никакого вопроса нет. Всё хорошо"
+                    },
+                    {
+                        "id": 11,
+                        "title": "Вы шутите?"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Как думаете, правильно ли вы ответили на предыдущий вопрос?",
+                "answerType": "single",
+                "answerVariansts": [
+                    {
+                        "id": 12,
+                        "title": "Я уверен, что правильно"
+                    },
+                    {
+                        "id": 13,
+                        "title": "Я думаю, что правильно, но это решаете вы"
+                    },
+                    {
+                        "id": 14,
+                        "title": "Нет, я лох"
+                    },
+                    {
+                        "id": 15,
+                        "title": "Никто не знает"
+                    }
+                ]
+            }
+        ]
+    }
+]

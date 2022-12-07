@@ -12,7 +12,7 @@ const QuestionTimer: FC<IQuestionTimeProps> = ({ time, percentLeft }) => {
     const a = (percentLeft / 100) * circumference;
     return (
         <div className={s.container}>
-            <span className={s.time}>01:45</span>
+            <span className={s.time}>{time}</span>
             <svg
                 className={s.svg}
                 x="0px"

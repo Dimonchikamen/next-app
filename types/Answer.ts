@@ -1,3 +1,4 @@
 export type Answer = {
-    title: string;
+    id: number;
+    title: number | string;
 };

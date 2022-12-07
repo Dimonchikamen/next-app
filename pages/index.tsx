@@ -1,13 +1,9 @@
 import type { NextPage } from "next";
 import { FC, useState } from "react";
-import Button from "../components/Button/Button";
-import CheckBox from "../components/CheckBox/CheckBox";
 import Header from "../components/Header/Header";
-import InformationComponent from "../components/InformationComponent/InformationComponent";
 import NavSidebar from "../components/NavSidebar/NavSidebar";
-import QuestionTimer from "../components/QuestionTimer/QuestionTimer";
-import RadioButton from "../components/RadioButton/RadioButton";
 import styles from "../styles/Home.module.css";
+import QuestionForm from "../components/QuestionForm/QuestionForm";
 
 interface ILinkBlockProps {
     title: string;
@@ -45,44 +41,7 @@ const Home: NextPage = () => {
                     testTitle={"Русь и золотая орда"}
                     testTimeLeft={"60:30"}
                 />
-                <main className={styles.main}>
-                    <QuestionTimer
-                        time="1:45"
-                        percentLeft={75}
-                    />
-                    <InformationComponent
-                        imageURL="/question.svg"
-                        text="8/20"
-                    />
-                    <InformationComponent
-                        imageURL="/clock.svg"
-                        text="60:00"
-                    />
-                    <Button
-                        title="Создать игру"
-                        disabled={true}
-                    />
-                    <form>
-                        <RadioButton
-                            label="qwe"
-                            value="qwe"
-                        />
-                        <RadioButton
-                            label="ww"
-                            value="ww"
-                            disabled={true}
-                        />
-                        <CheckBox
-                            value="qwe"
-                            label="qwe?"
-                        />
-                        <CheckBox
-                            value="tre"
-                            label="tre?"
-                            disabled={true}
-                        />
-                    </form>
-                </main>
+                <main className={styles.main}></main>
             </div>
         </div>
     );
