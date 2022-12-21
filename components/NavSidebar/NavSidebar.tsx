@@ -1,7 +1,6 @@
 import { FC } from "react";
 import s from "./NavSidebar.module.scss";
 import Image from "next/image";
-import { QuestionView } from "../../types/Question";
 
 interface INavElementProps {
     number: number;
@@ -16,7 +15,7 @@ const NavElement: FC<INavElementProps> = ({ number, isAnswered, isActive }) => {
 };
 
 interface INavSidebarProps {
-    questions: QuestionView[];
+    questions: { id: number; isAnswered: boolean }[];
     activeQuestionId: number;
     onSelectQuestion: (number: number) => void;
 }

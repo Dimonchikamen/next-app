@@ -29,11 +29,11 @@ const Home: NextPage = () => {
 
     return (
         <div className={styles.page}>
-            <NavSidebar
+            {/* <NavSidebar
                 questions={q}
                 activeQuestion={active}
                 onSelectQuestion={setActive}
-            />
+            /> */}
             <div className={styles.container}>
                 <Header
                     answers={3}

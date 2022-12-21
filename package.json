@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.8.0",
     "next": "12.3.0",
     "react": "18.2.0",
+    "react-countdown-circle-timer": "^3.1.0",
     "react-dom": "18.2.0",
     "sass": "^1.54.9",
-    "use-local-storage": "^2.3.6"
+    "use-local-storage": "^2.3.6",
+    "use-session-storage": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "18.7.18",

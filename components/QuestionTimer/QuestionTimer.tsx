@@ -1,17 +1,21 @@
 import { FC } from "react";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import useSessionStorage from "../Hooks/useSessionStorage";
+import useTimer from "../Hooks/UseTimer";
 import s from "./QuestionTimer.module.scss";
 
 interface IQuestionTimeProps {
-    time: string;
-    percentLeft: number;
+    totalTime: number;
 }
 
-const QuestionTimer: FC<IQuestionTimeProps> = ({ time, percentLeft }) => {
+const QuestionTimer: FC<IQuestionTimeProps> = ({ totalTime }) => {
+    //const timer = useTimer(totalTime, useSessionStorage);
     const pi = 3.14159265358979;
     const circumference = 2 * pi * 60;
-    const a = (percentLeft / 100) * circumference;
+    // const a = (percentLeft / 100) * circumference;
     return (
-        <div className={s.container}>
+        <>
+            {/* <div className={s.container}>
             <span className={s.time}>{time}</span>
             <svg
                 className={s.svg}
@@ -30,7 +34,31 @@ const QuestionTimer: FC<IQuestionTimeProps> = ({ time, percentLeft }) => {
                     r="60"
                 />
             </svg>
-        </div>
+        </div> */}
+            <CountdownCircleTimer
+                isPlaying
+                duration={totalTime ? totalTime : 0}
+                colors={["#00EAD9", "#00EAD9"]}
+                colorsTime={[totalTime, 0]}
+                strokeLinecap="square"
+                trailStrokeWidth={4}
+                trailColor="#fff"
+                strokeWidth={4}
+                size={120}
+            >
+                {({ remainingTime }) => (
+                    <div className="text-2xl">
+                        {`${Math.floor(remainingTime / 60)}:${
+                            Math.floor(remainingTime % 60) === 0
+                                ? "00"
+                                : Math.floor(remainingTime % 60) < 10
+                                ? `0${Math.floor(remainingTime % 60)}`
+                                : Math.floor(remainingTime % 60)
+                        }`}
+                    </div>
+                )}
+            </CountdownCircleTimer>
+        </>
     );
 };
 

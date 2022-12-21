@@ -1,4 +1,4 @@
-import React, { FC, useState, memo, useEffect, useCallback } from "react";
+import React, { FC, useState, useCallback } from "react";
 import QuestionTimer from "../QuestionTimer/QuestionTimer";
 import Question from "../Question/Question";
 import Button from "../Button/Button";
@@ -9,10 +9,27 @@ interface IQuestionFormProps {
     question: QuestionView;
     onSubmitAnswer: (answer: string | number) => void;
     onSkipAnswer: () => void;
+    onEndTest: () => void;
 }
 
-const QuestionForm: FC<IQuestionFormProps> = ({ question, onSubmitAnswer, onSkipAnswer }) => {
+const QuestionForm: FC<IQuestionFormProps> = ({ question, onSubmitAnswer, onSkipAnswer, onEndTest }) => {
     const [answer, setAnswer] = useState("");
+
+    const endTest = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>) => {
+            e.preventDefault();
+            onEndTest();
+        },
+        [onEndTest]
+    );
+
+    const skip = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>) => {
+            e.preventDefault();
+            onSkipAnswer();
+        },
+        [onSkipAnswer]
+    );
 
     const submitHandler = useCallback(
         (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,23 +41,27 @@ const QuestionForm: FC<IQuestionFormProps> = ({ question, onSubmitAnswer, onSkip
 
     return (
         <form className={s.form}>
-            <div className={s.question_timer_container}>
-                <QuestionTimer
-                    time="14:00"
-                    percentLeft={80}
-                />
-            </div>
+            {question.timeMinutes && (
+                <div className={s.question_timer_container}>
+                    <QuestionTimer totalTime={question.timeMinutes * 60} />
+                </div>
+            )}
 
             <Question
-                questionTitle="С именем какого человек у вас ассоциируется сожжение Москвы?"
+                questionTitle={question.title}
                 answerVariants={question.answerVariants}
                 onClickAnswer={setAnswer}
             />
             <div className={s.action_button_group}>
                 <Button
                     className={s.skip_button}
+                    title="Завершить тест"
+                    onClick={endTest}
+                />
+                <Button
+                    className={s.skip_button}
                     title="Пропустить"
-                    onClick={onSkipAnswer}
+                    onClick={skip}
                 />
                 <Button
                     title="Ответить"

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "questions": [
+            {
+                "id": 1,
+                "answerType": "single",
+                "answer": 20
+            },
+            {
+                "id": 2,
+                "answerType": "single",
+                "answer": 10
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "questions": [
+            {
+                "id": 3,
+                "answerType": "single",
+                "answer": "Никакого вопроса нет. Всё хорошо"
+            },
+            {
+                "id": 4,
+                "answerType": "single",
+                "answer": "Я уверен, что правильно"
+            }
+        ]
+    }
+]
